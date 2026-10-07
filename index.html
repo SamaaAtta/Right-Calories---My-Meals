@@ -50,47 +50,65 @@ body{
 
 #loginScreen{
   min-height:100vh;
+  min-height:100dvh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:20px
+  padding:20px;
+  box-sizing:border-box;
 }
-
 
 #logoutBtn {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  position:absolute;
+  top:15px;
+  left:15px;
 }
 
+.login-card{
+  width:100%;
+  max-width:380px;
+  box-sizing:border-box;
+  text-align:center;
+}
+
+.login-card img{
+  width:220px;
+  max-width:80%;
+  height:auto;
+  display:block;
+  margin:0 auto 15px;
+}
 
 .login-card h1{
   margin:8px 0 4px;
-  font-size:1.5rem
+  font-size:1.5rem;
 }
 
 .login-card p{
   color:var(--mut);
-  margin:0 0 20px
+  margin:0 0 20px;
 }
 
 .login-card input{
   width:100%;
+  box-sizing:border-box;
   margin:7px 0;
   border:1.5px solid var(--line);
   background:#f3f1ec;
   border-radius:10px;
-  padding:11px;
+  padding:12px 14px;
   font:inherit;
-  color:var(--ink)
+  font-size:16px;
+  color:var(--ink);
 }
 
 .login-card input:focus{
-  outline:2px solid var(--ink)
+  outline:2px solid var(--ink);
 }
 
 .login-card button{
   width:100%;
+  box-sizing:border-box;
   margin-top:10px;
   background:var(--ink);
   color:#fff;
@@ -99,14 +117,41 @@ body{
   padding:11px 20px;
   font:inherit;
   font-weight:700;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .login-error{
   color:#9b2c2c;
   font-size:.85rem;
   margin-top:12px;
-  min-height:20px
+  min-height:20px;
+}
+
+/* iPhone / small screens */
+
+@media (max-width:600px){
+  #loginScreen{
+    padding:20px;
+  }
+
+  .login-card{
+    width:100%;
+    max-width:360px;
+  }
+
+  .login-card img{
+    width:200px;
+    max-width:75%;
+  }
+
+  .login-card h1{
+    font-size:1.4rem;
+  }
+
+  .login-card input,
+  .login-card button{
+    width:100%;
+  }
 }
 
 /* MAIN */
@@ -438,16 +483,6 @@ td.offc{
   white-space:nowrap
 }
 
-@media(max-width:560px){
-  .one input{
-    min-width:110px
-  }
-
-  .one{
-    display:block;
-    overflow-x:auto
-  }
-}
 
 .act{
   border:0;
@@ -484,6 +519,45 @@ td.offc{
   margin-top:8px;
   color:var(--mut);
   font-size:.8rem
+}
+/* MOBILE TABLE */
+
+@media (max-width:600px){
+
+  #weeks{
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  #weeks .one{
+    width:100%;
+    min-width:650px;
+    table-layout:auto;
+  }
+
+  #weeks .one th,
+  #weeks .one td{
+    white-space:normal;
+    overflow-wrap:break-word;
+    word-break:normal;
+  }
+
+  #weeks .one td:nth-child(2),
+  #weeks .one td:nth-child(3){
+    min-width:180px;
+  }
+
+  #weeks .one input{
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+    white-space:normal;
+  }
+
+  #weeks .one .act{
+    white-space:nowrap;
+  }
 }
 </style>
 </head>
