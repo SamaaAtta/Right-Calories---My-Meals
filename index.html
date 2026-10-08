@@ -520,9 +520,7 @@ td.offc{
   color:var(--mut);
   font-size:.8rem
 }
-/* MOBILE TABLE */
-
-@media (max-width:600px){
+@media(max-width:600px){
 
   #weeks{
     width:100%;
@@ -531,35 +529,100 @@ td.offc{
   }
 
   #weeks .one{
-    width:100%;
-    min-width:650px;
-    table-layout:auto;
+    width:900px;
+    min-width:900px;
+    table-layout:fixed;
+    border-spacing:0px 6px;
+    border:none;
   }
 
   #weeks .one th,
   #weeks .one td{
     white-space:normal;
-    overflow-wrap:break-word;
-    word-break:normal;
+    border:none;
   }
 
-  #weeks .one td:nth-child(2),
+  /* DATE */
+  #weeks .one th:nth-child(1),
+  #weeks .one td:nth-child(1){
+    width:110px;
+    min-width:110px;
+    border:none;
+  }
+
+  /* LUNCH */
+  #weeks .one th:nth-child(2),
+  #weeks .one td:nth-child(2){
+    width:360px;
+    min-width:360px;
+    border:none;
+  }
+
+  /* SNACK */
+  #weeks .one th:nth-child(3),
   #weeks .one td:nth-child(3){
-    min-width:180px;
+    width:240px;
+    min-width:240px;
+    border:none;
   }
 
-  #weeks .one input{
+  /* EDIT / SAVE */
+  #weeks .one th:nth-child(4),
+  #weeks .one td:nth-child(4){
+    width:70px;
+    min-width:70px;
+    max-width:70px;
+    padding:4px 2px;
+    border:none;
+  }
+
+  /* DAY OFF */
+  #weeks .one th:nth-child(5),
+  #weeks .one td:nth-child(5){
+    width:90px;
+    min-width:90px;
+    max-width:90px;
+    padding:4px 2px;
+    border:none;
+  }
+
+  /* LUNCH INPUT */
+  #weeks .one td:nth-child(2) input{
     width:100%;
     min-width:0;
     box-sizing:border-box;
-    white-space:normal;
   }
 
+  /* SNACK INPUT */
+  #weeks .one td:nth-child(3) input{
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+
+  /* EDIT BUTTON */
   #weeks .one .act{
+    width:64px;
+    min-width:64px;
+    padding:6px 4px;
+    font-size:.8rem;
     white-space:nowrap;
   }
+
+  /* DAY OFF BUTTON */
+  #weeks .one .offb{
+    width:86px;
+    min-width:86px;
+    padding:0;
+    margin:0;
+    font-size:.7rem;
+    white-space:nowrap;
+    text-align:center;
+  }
+
 }
 </style>
+
 </head>
 
 <body>
